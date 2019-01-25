@@ -15,19 +15,19 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: '//nl.aquachain-foundation.org/',
+      ApiUrl: '//' + process.env.API_URL || 'aqua.rektmarketcap.com',
 
       // HTTP mining endpoint
-      HttpHost: 'http://nl.aquachain-foundation.org',
-      HttpPort: 8888,
+      HttpHost: process.env.HTTP_POST || 'http://aqua.rektmarketcap.com',
+      HttpPort: process.env.HTTP_PORT || 8888,
 
       // Stratum mining endpoint
-      StratumHost: 'example.net',
-      StratumPort: 8008,
+      StratumHost: process.env.STRATUM_HOST || 'aqua.rektmarketcap.com',
+      StratumPort: process.env.STRATUM_PORT || 8008,
 
       // Fee and payout details
-      PoolFee: '1%',
-      PayoutThreshold: '0.5 Aquachain',
+      PoolFee: process.env.POOL_FEE || '1%',
+      PayoutThreshold: process.env.PAYOUT_TRESHOLD || '0.5' + ' Aquachain',
 
       // For network hashrate (change for your favourite fork)
       BlockTime: 240.4
